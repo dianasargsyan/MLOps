@@ -5,5 +5,5 @@ with the intention of taking into account multiple different variables related t
 
 
 References:
-● Car Price Prediction Multiple Linear Regression. (2019, October 15). Kaggle.
+- Car Price Prediction Multiple Linear Regression. (2019, October 15). Kaggle.
 https://www.kaggle.com/datasets/hellbuoy/car-price-prediction
