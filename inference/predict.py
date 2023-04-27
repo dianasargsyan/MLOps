@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from utils import check_missing_values, clean_car_names, convert_symboling_to_string, select_features
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from model.utils import check_missing_values, clean_car_names, convert_symboling_to_string, select_features
 import pandas as pd
 from sklearn.ensemble import GradientBoostingRegressor
 import joblib
@@ -55,7 +58,7 @@ def train_and_save_model(data_file, checkpoint_file):
 def predict_price(wheelbase, carlength, carwidth, carheight, curbweight, enginesize, 
 boreratio, stroke, compressionratio, horsepower, peakrpm, citympg, highwaympg):
     # Load the trained model checkpoint file
-    model = joblib.load('model_checkpoint2.joblib')
+    model = joblib.load('/Users/diana/Desktop/MLOps/inference/model_checkpoint2.joblib')
 
     # Create a dataframe with the input features
     input_df = pd.DataFrame({
@@ -82,8 +85,8 @@ boreratio, stroke, compressionratio, horsepower, peakrpm, citympg, highwaympg):
 
 
 if __name__ == "__main__":
-    data_file = 'CarPrice_Assignment.csv'
-    checkpoint_file = 'model_checkpoint2.joblib'
+    data_file = '/Users/diana/Desktop/MLOps/data/CarPrice_Assignment.csv'
+    checkpoint_file = '/Users/diana/Desktop/MLOps/inference/model_checkpoint2.joblib'
 
     train_and_save_model(data_file, checkpoint_file)
     price = predict_price(wheelbase = 88.6, carlength = 168.8, carwidth = 64.1, carheight = 48.8, curbweight = 2548, enginesize = 130, 
