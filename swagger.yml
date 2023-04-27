@@ -1,0 +1,109 @@
+openapi: 3.0.0
+info:
+  title: "Car Price Prediction API"
+  description: "An API for predicting the prices of cars based on various features."
+  version: "1.0.0"
+  
+servers:
+  - url: "/"
+  
+paths:
+  /:
+    get:
+      operationId: "flask_main.home"
+      tags:
+        - ""
+      summary: "Welcome to the Car Price Prediction API"
+      responses:
+        "200":
+          description: "This API can be used to predict the price of a car based on its specifications."
+  /predict:
+    get:
+      operationId: "flask_main.predict_price"
+      tags:
+        - ""
+      summary: "Predict the price of a car"
+      description: "Predicts the price of a car based on its features"
+      parameters:
+        - name: wheelbase
+          in: query
+          description: "Distance between the centers of the front and rear wheels. Wheelbase values normally range from 87 to 121"
+          schema:
+            type: number
+          required: True
+        - name: carlength
+          in: query
+          description: "Length of the car. Carlength values normally range from 141 to 208"
+          schema:
+            type: number
+          required: True
+        - name: carwidth
+          in: query
+          description: "Width of the car. Carwidth values normally range from 60 to 72"
+          schema:
+            type: number
+          required: True
+        - name: carheight
+          in: query
+          description: "Height of the car. Carheigth values normally range from 48 to 60"
+          schema:
+            type: number
+          required: True
+        - name: curbweight
+          in: query
+          description: "Weight of the car. Curbweight values normally range from 1488 to 4066"
+          schema:
+            type: number
+          required: True
+        - name: enginesize
+          in: query
+          description: "Size of the car's engine. Engineesize values normally range from 61 to 326"
+          schema:
+            type: number
+          required: True
+        - name: boreratio
+          in: query
+          description: "Ratio of cylinder bore diameter to piston stroke length, Boreratio values normally range from 3 to 4"
+          schema:
+            type: number
+          required: True
+        - name: stroke
+          in: query
+          description: "Length of the piston stroke. Stroke values normally range from 2 to 4"
+          schema:
+            type: number
+          required: True
+        - name: compressionratio
+          in: query
+          description: "Ratio of the volume of the combustion chamber at its largest to its smallest. Compressionratio values normally range from 7 to 23"
+          schema:
+            type: number
+          required: True
+        - name: horsepower
+          in: query
+          description: "Horsepower of the car. Horsepower values normally range from 48 to 288"
+          schema:
+            type: number
+          required: True
+        - name: peakrpm
+          in: query
+          description: "Maximum revolutions per minute of the car's engine. Peakrpm values normally range from 4150 to 6600"
+          schema:
+            type: number
+          required: True
+        - name: citympg
+          in: query
+          description: "Miles per gallon the car can travel in city conditions. Citympg values normally range from 13 to 49"
+          schema:
+            type: number
+          required: True
+        - name: highwaympg
+          in: query
+          description: "Miles per gallon the car can travel in highway conditions. Highwaympg values normally range from 16 to 54"
+          schema:
+            type: number
+          required: True
+      responses:
+        '200':
+          description: "OK"
+  

@@ -1,0 +1,16 @@
+{
+    
+    "wheelbase": 88.6,
+    "carlength": 168.8,
+    "carwidth": 64.1,
+    "carheight": 48.8,
+    "curbweight": 2548,
+    "enginesize": 130,
+    "boreratio": 3.47,
+    "stroke": 2.68, 
+    "compressionratio": 9, 
+    "horsepower": 111, 
+    "peakrpm": 5000, 
+    "citympg": 21, 
+    "highwaympg": 27
+  }
